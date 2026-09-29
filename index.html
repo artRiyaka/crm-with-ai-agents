@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#161411" />
+  <title>Vellum</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640&family=Outfit:wght@340;460;560;640&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23161411'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='Georgia' font-size='16' fill='%23f4ecdf'%3EV%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <section id="login" class="login">
+    <div class="login-brand">
+      <div>
+        <p class="brand-kicker">CRM workspace</p>
+        <h1 class="wordmark">Vellum</h1>
+        <p class="brand-copy">People, pipeline, and a small team of agents. One quiet place to run the book.</p>
+        <div class="brand-points">
+          <div class="glass"><strong>12</strong><span>people</span></div>
+          <div class="glass"><strong>5</strong><span>stages</span></div>
+          <div class="glass"><strong>6</strong><span>agents</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="login-panel">
+      <form id="login-form" class="login-card" data-form="login" autocomplete="off">
+        <p class="eyebrow">Northline</p>
+        <h2>Welcome back</h2>
+        <p class="lede">The demo workspace is already filled in. Continue when you are ready.</p>
+        <label class="field">
+          <span>Operator</span>
+          <input id="operator" type="password" name="operator" value="atlas-operator" readonly autocomplete="off" aria-label="Operator" />
+        </label>
+        <label class="field">
+          <span>Passcode</span>
+          <input id="passcode" type="password" name="passcode" value="vellum-demo" readonly autocomplete="off" aria-label="Passcode" />
+        </label>
+        <button class="btn primary" type="submit">Enter workspace</button>
+        <p class="hint">Nothing to type.</p>
+      </form>
+    </div>
+  </section>
+
+  <div id="app" class="shell" hidden>
+    <aside id="sidebar" class="sidebar">
+      <div class="brand">
+        <span class="mark">V</span>
+        <span><strong>Vellum</strong><small>Northline</small></span>
+      </div>
+      <nav aria-label="Primary">
+        <button class="nav-link" data-action="navigate" data-nav="overview">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>
+          Overview
+        </button>
+        <button class="nav-link" data-action="navigate" data-nav="people">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5 19c1.4-3 3.8-4.5 7-4.5S17.6 16 19 19"/></svg>
+          People
+        </button>
+        <button class="nav-link" data-action="navigate" data-nav="pipeline">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="4" width="5" height="16" rx="1.4"/><rect x="10" y="4" width="5" height="10" rx="1.4"/><rect x="17" y="4" width="4" height="13" rx="1.4"/></svg>
+          Pipeline
+        </button>
+        <button class="nav-link" data-action="navigate" data-nav="activity">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 12h4l2-5 4 10 2-5h4"/></svg>
+          Activity
+        </button>
+        <button class="nav-link" data-action="navigate" data-nav="agents">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M12 3l1.6 4.8L18 9.4l-4.4 1.6L12 16l-1.6-5L6 9.4l4.4-1.6L12 3z"/><path d="M18 14l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7.7-2z"/></svg>
+          Agents
+        </button>
+        <button class="nav-link" data-action="navigate" data-nav="reports">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 19V5"/><path d="M4 19h16"/><path d="M8 16v-4"/><path d="M12 16V8"/><path d="M16 16v-6"/></svg>
+          Reports
+        </button>
+      </nav>
+      <div class="side-foot">
+        <div class="who">
+          <span id="who-avatar" class="avatar">RQ</span>
+          <span><strong id="who-name">Riley Quinn</strong><span id="who-role">Workspace lead</span></span>
+        </div>
+        <div class="side-actions">
+          <button class="linkish" data-action="sign-out" type="button">Sign out</button>
+          <button class="linkish" data-action="reset-demo" type="button">Reset demo</button>
+        </div>
+      </div>
+    </aside>
+    <button id="scrim" class="scrim" data-action="close-menu" hidden aria-label="Close menu"></button>
+
+    <div class="main">
+      <header class="topbar">
+        <button id="menu-btn" class="menu-btn" data-action="toggle-menu" type="button" aria-label="Open menu">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h12"/></svg>
+        </button>
+        <label class="search">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4 4"/></svg>
+          <input id="search" type="search" placeholder="Search people, companies, cities" aria-label="Search" />
+        </label>
+        <div class="pulse"><span class="dot"></span><span id="agent-status">Agents ready</span></div>
+      </header>
+      <div id="view" class="content"></div>
+    </div>
+
+    <nav class="tabbar" aria-label="Mobile">
+      <button class="tab-link" data-action="navigate" data-nav="overview" type="button">Home</button>
+      <button class="tab-link" data-action="navigate" data-nav="people" type="button">People</button>
+      <button class="tab-link" data-action="navigate" data-nav="pipeline" type="button">Pipeline</button>
+      <button class="tab-link" data-action="navigate" data-nav="agents" type="button">Agents</button>
+      <button class="tab-link" data-action="navigate" data-nav="reports" type="button">Reports</button>
+    </nav>
+  </div>
+
+  <div id="drawer" class="drawer" hidden>
+    <button class="backdrop" data-action="close-drawer" aria-label="Close"></button>
+    <aside id="drawer-panel" class="drawer-panel" aria-label="Person"></aside>
+  </div>
+
+  <div id="modal" class="modal" hidden>
+    <button class="backdrop" data-action="close-modal" aria-label="Close"></button>
+    <div id="modal-card" class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title"></div>
+  </div>
+
+  <div id="runner" class="runner" hidden>
+    <div class="backdrop"></div>
+    <div id="runner-card" class="runner-card" role="status"></div>
+  </div>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/agents.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
